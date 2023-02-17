@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "msw": "^1.0.1"
   }
 }
