@@ -4,7 +4,7 @@ class NavBar extends React.Component {
     constructor(cards){
         super(cards);
         this.state = {
-            cardsMap: {},
+            cardsMap: "",
         }
     }
 

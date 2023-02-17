@@ -1,11 +1,15 @@
 import './App.css';
 import FormCard from './components/FormCard';
 import React from 'react';
+import NavBar from './components/NavBar';
 
 
 function App(){
   return (
-    <FormCard/>
+    <>
+    <div className='nav-bar'><NavBar/></div>
+      <FormCard/>
+    </>
   )
 }
 
