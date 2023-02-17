@@ -66,7 +66,7 @@ class Cards extends React.Component {
 
     render(){
         return(
-            <this.SelectPlan></this.SelectPlan>
+        <this.SelectPlan/>
         )
     }
 }

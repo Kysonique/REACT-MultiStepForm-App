@@ -1,22 +1,39 @@
 import './App.css';
 import FormCard from './components/FormCard';
-import Cards from './components/Cards';
 import React from 'react';
-
-(async ()=>{
-  const { worker } = await import("../public/mocks/browser");
-  await worker.start();
-  
-})
 
 
 function App(){
   return (
-      <div>
-        <FormCard/>
-      </div>
-    );
-  
+    <FormCard/>
+  )
 }
+
+// class App extends React.Component(){
+//   constructor(){
+//     super();
+//     this.state = {
+//       planInfo: {}
+//     }
+//   }
+//   // test() {
+//   //   fetch('/verifyEmail', {
+//   //     method: 'post', 
+//   //     headers:{'Content-Type':'application/json'}
+//   // })
+  
+
+
+//   render(){
+//     return (
+//         <>
+//           <FormCard/>
+//           <button type='button'></button>
+//         </>
+//     )
+    
+    
+//   }
+// }
 
 export default App;
