@@ -1,4 +1,15 @@
-.nav-bar{
-  width: 274px;
-  height: 568px;
+body{
+  display: grid;
+  grid-template-columns: auto auto;
 }
+
+.nav-bar{
+  grid-column: 1;
+
+}
+
+.card-div{
+  color: blue;
+  grid-template-columns: 2;
+}
+

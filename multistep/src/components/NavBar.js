@@ -4,33 +4,24 @@ class NavBar extends React.Component {
     constructor(cards){
         super(cards);
         this.state = {
-            cardsMap: "",
+            cardsMap: [],
         }
     }
 
+    //onclic setState
+    
+
     render(){
         return(
-            // <div className="nav-div" data-toggle="buttons">
-            //     <label className="nav-btn" >
-            //         <input type="radio" name="options" id="option1" autocomplete="off">Step 1</input>
-            //     </label>
-
-            //     <label className="nav-btn">
-            //         <input type="radio" name="options" id="option2" autocomplete="off">Step 2</input>
-            //     </label>
-
-            //     <label className="nav-btn">
-            //         <input type="radio" name="options" id="option3" autocomplete="off">3</input>
-            //     </label>
-
-            //     <label className="nav-btn">
-            //         <input type="radio" name="options" id="option4" autocomplete="off">4</input>
-            //     </label>
-            // </div>
-
-            <>
-            <h1>this is the nav</h1>
-            </>
+        <>
+            <a className="nav-step">
+                <div className="step1"><p>1</p></div>
+                <div>
+                    <p>STEP 1</p>
+                    <p>YOUR INFO</p>
+                </div>
+            </a>
+        </>
 
         )
     }
