@@ -69,6 +69,9 @@ class FormCard extends React.Component {
                 id="phone" 
                 name="phone"
                 ></input>
+                
+                <button className="nestStep">Next Step</button>
+
             </form>
         )
     }
