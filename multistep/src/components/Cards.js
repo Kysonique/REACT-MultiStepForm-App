@@ -52,9 +52,26 @@ class Cards extends React.Component {
 
     }
 
+    handleNextPlanBtn = () => {
+        let planArr = [ this.FormCard, this.SelectPlan];
+
+    }
+
     render(){
         return(
-        <this.SelectPlan/>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <FormCard class="d-block w-100"/>
+                    </div>
+
+                    <div class="carousel-item">
+                        <SelectPlan class="d-block w-100"/>
+                    </div>
+                </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"></button>
+            </div>
+        
         )
     }
 }

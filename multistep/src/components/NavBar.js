@@ -1,5 +1,7 @@
 import React from "react";
 import './NavBar.css'
+import FormCard from "./FormCard";
+import SelectPlan from "./SelectPlan";
 
 
 class NavBar extends React.Component {
@@ -18,7 +20,7 @@ class NavBar extends React.Component {
         return(
             <>
         <div className="nav-container">
-            <div className="nav-step">
+            <div className="nav-step" type="button" onClick={{FormCard}}>
                 <input type="button" className="numb-div" value={1}/>
                 <div className="nav-titles">
                     <p className="sTitle">STEP 1</p>

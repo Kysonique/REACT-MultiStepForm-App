@@ -23,10 +23,23 @@ class App extends React.Component{
         <div className='nav-bar'>
           <NavBar/>
         </div>
+        <button className='testbtn' onClick={this.test}>test</button>
 
-        <div className='card-div'>
-          <FormCard/>
-          <button onClick={this.test}></button>
+
+      <div className='card-div'>
+        <div id="carouselPage" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <FormCard class="d-block w-100"/>
+              </div>
+
+              <div class="carousel-item">
+                  <SelectPlan class="d-block w-100"/>
+              </div>
+            </div>
+            
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselPage" data-bs-slide="next">Next Step</button>
+          </div>
         </div>
       </div>
     )

@@ -51,10 +51,11 @@ class FormCard extends React.Component {
     render(){
         return (
             <>
-                <h1>Personal info</h1>
-                <h3>Please provide your name, email address, and phone number.</h3>
+                <p className="title">Personal info</p>
+                <p className="subtitle">Please provide your name, email address, and phone number.</p>
                 <form className="form">
                     <label htmlFor="username">Name</label>
+                    <br/>
                     <input 
                     type="text" 
                     className="username" 
@@ -64,6 +65,7 @@ class FormCard extends React.Component {
                     <br/>
 
                     <label htmlFor="email">Email Address</label>
+                    <br/>
                     <input 
                     type="text" 
                     className="email" 
@@ -73,6 +75,7 @@ class FormCard extends React.Component {
                     <br/>
 
                     <label htmlFor="phone">Phone</label>
+                    <br/>
                     <input 
                     type="text" 
                     className="phone" 
@@ -81,7 +84,7 @@ class FormCard extends React.Component {
                     ></input>
                     <br/>
 
-                    <button className="nestStep">Next Step</button>
+                    <button className="nestStepBtn">Next Step</button>
 
                 </form>
             </>

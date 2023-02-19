@@ -1,4 +1,5 @@
 import React from "react"
+import "./SelectPlan.css"
 
 class SelectPlan extends React.Component{
     constructor(props) {
@@ -50,6 +51,9 @@ class SelectPlan extends React.Component{
                     <p className="monthsFree"></p>
 
                 </div>
+                <button className="prevStepBtn">Go Back</button>
+                <button className="nextStepBtn">Next Step</button>
+
             </div>
         )
     }
