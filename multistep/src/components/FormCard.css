@@ -1,0 +1,37 @@
+
+body{
+    font-family: 'Ubuntu';
+}
+
+.form{
+    line-height: 2.5;
+}
+
+input{
+    width: 450px;
+    height: 48px;
+}
+
+label{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+::placeholder{
+    color: #9699AA;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 400;
+    color: #9699AA;
+}

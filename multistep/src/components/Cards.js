@@ -1,6 +1,7 @@
 import './App.css';
 import React from "react";
 import FormCard from "./FormCard";
+import SelectPlan from './SelectPlan';
 
 class Cards extends React.Component {
     constructor(props) {
@@ -15,43 +16,13 @@ class Cards extends React.Component {
 
     YourInfo = () => {
         return(
-            <FormCard></FormCard> 
+            <FormCard/>
         )
     }
 
-    SelectPlan = () => {
-        //
-        const planPrices =[[9, 90] [12, 120] [15, 150]]
-        function choosePrice(monthly, yearly){
-            // let pricesArr = [...planPrices]
-            
-
-        }
+    YourPlan = () => {
         return(
-            <div id="cardContainer">
-                <div id="arcade">
-                    <img alt=""></img>
-                    <p id="planType">Arcade</p>
-                    <p id="price"></p>
-                    <p className="monthsFree"></p>
-                </div>
-
-                <div id="advanced">
-                    <img alt=""></img>
-                    <p id="planType">Advanced</p>
-                    <p id="price"></p>
-                    <p className="monthsFree"></p>
-
-                </div>
-
-                <div id="pro">
-                    <img alt=""></img>
-                    <p id="planType">Pro</p>
-                    <p id="price">$</p>
-                    <p className="monthsFree"></p>
-
-                </div>
-            </div>
+            <SelectPlan/>
         )
     }
 

@@ -1,4 +1,6 @@
 import React from "react";
+import './FormCard.css'
+
 
 class FormCard extends React.Component {
     constructor(props) {
@@ -48,31 +50,41 @@ class FormCard extends React.Component {
 
     render(){
         return (
-            <form>
-                <label htmlFor="username">Name</label>
-                <input 
-                type="text" 
-                id="username" 
-                name="username"
-                ></input>
+            <>
+                <h1>Personal info</h1>
+                <h3>Please provide your name, email address, and phone number.</h3>
+                <form className="form">
+                    <label htmlFor="username">Name</label>
+                    <input 
+                    type="text" 
+                    className="username" 
+                    name="username"
+                    placeholder="e.g. Stephen King"
+                    ></input>
+                    <br/>
 
-                <label htmlFor="email">Email Address</label>
-                <input 
-                type="text" 
-                id="email" 
-                name="email"
-                ></input>
+                    <label htmlFor="email">Email Address</label>
+                    <input 
+                    type="text" 
+                    className="email" 
+                    name="email"
+                    placeholder="e.g. stephenking@lorem.com"
+                    ></input>
+                    <br/>
 
-                <label htmlFor="phone">Phone</label>
-                <input 
-                type="text" 
-                id="phone" 
-                name="phone"
-                ></input>
-                
-                <button className="nestStep">Next Step</button>
+                    <label htmlFor="phone">Phone</label>
+                    <input 
+                    type="text" 
+                    className="phone" 
+                    name="phone"
+                    placeholder="e.g. +1 281 330 8004 "
+                    ></input>
+                    <br/>
 
-            </form>
+                    <button className="nestStep">Next Step</button>
+
+                </form>
+            </>
         )
     }
 }

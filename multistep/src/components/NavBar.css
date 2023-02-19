@@ -1,3 +1,32 @@
+body{
+    font-family: 'Ubuntu';
+}
 .nav-container{
-    color: green;
+    color: white;
+    padding: 10%;
+}
+.numb-div{
+    color: white;
+    background-color: transparent;
+    border: 1px white solid;
+    border-radius: 75%;
+    height: 35px;
+    width: 35px;
+    margin-top: 10%;
+}
+.nav-titles{
+    margin-left: 10%;
+    line-height: 1;
+}
+.sTitle{
+    font-size: 12px;
+    font-weight: 400;
+}
+.sSubTitle{
+    font-size: 14px;
+    font-weight: 700;
+}
+.nav-step{
+    display: flex;
+    flex-direction: row;
 }
