@@ -2,15 +2,51 @@ import './App.css';
 import FormCard from './components/FormCard';
 import React from 'react';
 import NavBar from './components/NavBar';
-import SelectPlan from './components/SelectPlan';
+
 
 class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      planInfo: {}
+      newplan:[
+        {
+        urserinfo: [],
+        total: []
+        }
+      ]
     }
   }
+//   resetState =() => this.setState({
+//     username: "",
+//     email: "",
+//     phone: "",
+//     id: this.props.key
+// })
+  addPlan(newPlanObj){
+    const newPlanInfo = JSON.parse(JSON.stringify(this.state.newplan))
+    newPlanInfo.push(newPlanObj)
+    return this.setState({
+      newplan:[
+        {
+        urserinfo: {newPlanInfo}
+         }]
+        })
+  }
+
+  totalPrice(pricingObj){
+    const priceArr = JSON.parse(JSON.stringify(this.state.pricing))
+    priceArr.push(pricingObj)
+    return this.setState({
+      newplan:[
+        {
+        total: {priceArr}
+         }]    
+        })
+    
+  }
+
+
+
   test() {
     fetch('/verifyEmail', {
       method: 'post', 
@@ -27,7 +63,11 @@ class App extends React.Component{
 
 
       <div className='card-div'>
-        <div id="carouselPage" class="carousel slide">
+        <FormCard
+        addPlan ={this.addPlan} 
+        handleSaveClick = {this.addPlan}/>
+
+        {/* <div id="carouselPage" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
                   <FormCard class="d-block w-100"/>
@@ -39,8 +79,8 @@ class App extends React.Component{
             </div>
             
           <button class="carousel-control-next" type="button" data-bs-target="#carouselPage" data-bs-slide="next">Next Step</button>
-          </div>
-        </div>
+        </div>*/}
+    </div> 
       </div>
     )
   }

@@ -11,41 +11,42 @@ class FormCard extends React.Component {
             phone: "",
             id: props.key
         };
-        this.handlerUserNameChange = this.handlerUserNameChange.bind(this);
-        this.handlerEmailChange = this.handlerEmailChange.bind(this);
-        this.handlerPhoneChange = this.handlerPhoneChange.bind(this);
-        this.handleSave = this.handleSave.bind(this)
+        this.handleUserNameChange = this.handleUserNameChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePhoneChange = this.handlePhoneChange.bind(this);
     }
 
-    handlerUserNameChange(e){
+    handleUserNameChange(e){
         this.setState({ username: e.target.value});
+        console.log(e.target.value)
     }
 
-    handlerEmailChange(e){
-        this.setState({ username: e.target.value});
+    handleEmailChange(e){
+        this.setState({ email: e.target.value});
     }
 
-    handlerPhoneChange(e){
-        this.setState({ username: e.target.value});
+    handlePhoneChange(e){
+        this.setState({ phone: e.target.value});
     }
 
-    resetState =() => this.setState({
-        username: "",
-        email: "",
-        phone: "",
-        id: this.props.key
-    })
+    // resetState =() => this.setState({
+    //     username: "",
+    //     email: "",
+    //     phone: "",
+    //     id: this.props.key
+    // })
 
     handleSave(e){
         e.preventDefault()
         const payload = {
-            username: this.state.username,
-            email: this.state.email,
-            phone: this.state.phone,
-            id: this.state.id
+             username: this.state.username,
+             email: this.state.email,
+             phone: this.state.phone,
+             id: this.state.id
         }
         this.props.handleSaveClick(payload);
-        this.resetState()
+        //this.resetState();
+        
     }
 
     render(){
@@ -53,6 +54,7 @@ class FormCard extends React.Component {
             <>
                 <p className="title">Personal info</p>
                 <p className="subtitle">Please provide your name, email address, and phone number.</p>
+
                 <form className="form">
                     <label htmlFor="username">Name</label>
                     <br/>
@@ -61,6 +63,8 @@ class FormCard extends React.Component {
                     className="username" 
                     name="username"
                     placeholder="e.g. Stephen King"
+                    value={this.state.username}
+                    onChange={this.handleUserNameChange}
                     ></input>
                     <br/>
 
@@ -71,6 +75,8 @@ class FormCard extends React.Component {
                     className="email" 
                     name="email"
                     placeholder="e.g. stephenking@lorem.com"
+                    value={this.state.email}
+                    onChange={this.handleEmailChange}
                     ></input>
                     <br/>
 
@@ -81,10 +87,11 @@ class FormCard extends React.Component {
                     className="phone" 
                     name="phone"
                     placeholder="e.g. +1 281 330 8004 "
+                    value={this.state.phone}
+                    onChange={this.handlePhoneChange}
                     ></input>
                     <br/>
-
-                    <button className="nestStepBtn">Next Step</button>
+                    <button className="nestStepBtn" onClick={this.handleSave}>Next Step</button>
 
                 </form>
             </>

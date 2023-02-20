@@ -1,0 +1,1 @@
+//state properties = plantype added services then total
