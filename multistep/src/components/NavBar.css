@@ -16,8 +16,11 @@ body{
     height: 35px;
     width: 35px;
     margin-top: 10%;
+    font-weight: 700;
+    font-size: 14px;
+
 }
-.numb-div:active{
+.numb-div:focus{
     background-color: #BEE2FD;
     color: #022959;
 }

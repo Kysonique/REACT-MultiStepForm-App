@@ -30,4 +30,15 @@ body{
   display: none;
 }
 
+/* addon page  */
+.title{
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.subtitle{
+  font-size: 16px;
+  font-weight: 400;
+  color: #9699AA;
+}
 
