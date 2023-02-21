@@ -11,6 +11,7 @@ class SelectPlan extends React.Component{
             }
 
         }
+        this.monthlyYearly = this.monthlyYearly.bind(this)
     }
 
     PlanOptions = [
@@ -20,6 +21,8 @@ class SelectPlan extends React.Component{
 
     ]
 
+    //chosePlan = PlanOptions.
+
     monthlyYearly(){
          if (this.props.ToggleBtn === true){
             this.setState(this.PlanOptions.price[0])
@@ -27,6 +30,8 @@ class SelectPlan extends React.Component{
             this.setState(this.PlanOptions.price[1])
          }
     }
+
+
     
     render(){
         return(
@@ -35,26 +40,26 @@ class SelectPlan extends React.Component{
             <p className="subtitle">You have the option of monthly or yearly billing.</p>
 
             <div className="cardContainer">
-                <div className="pickPlan" id="arcade">
-                    <img alt=""></img>
-                    <p className="planType">{this.PlanOptions[0].type}</p>
-                    <p className="price">${this.PlanOptions[0].price}/{this.PlanOptions[0].abbr}</p>
-                    <p className="monthsFree">{this.PlanOptions[0].free}</p>
+                <div className="pickPlan" id="arcade" typeof="button" onClick={()=> console.log(this.props.ToggleBtn)}>
+                    <img id="arcadeIMG"></img>
+                    <p id="planType">{this.PlanOptions[0].type}</p>
+                    <p id="price">${this.PlanOptions[0].price}/{this.PlanOptions[0].abbr}</p>
+                    <p id="monthsFree">{this.PlanOptions[0].free}</p>
                 </div>
 
                 <div className="pickPlan" id="advanced">
-                    <img alt=""></img>
-                    <p className="planType">{this.PlanOptions[1].type}</p>
-                    <p className="price">${this.PlanOptions[1].price}/{this.PlanOptions[1].abbr}</p>
-                    <p className="monthsFree">{this.PlanOptions[1].free}</p>
+                    <img id="advIMG"></img>
+                    <p id="planType">{this.PlanOptions[1].type}</p>
+                    <p id="price">${this.PlanOptions[1].price}/{this.PlanOptions[1].abbr}</p>
+                    <p id="monthsFree">{this.PlanOptions[1].free}</p>
 
                 </div>
 
                 <div className="pickPlan" id="pro">
-                    <img alt=""></img>
-                    <p className="planType">{this.PlanOptions[2].type}</p>
-                    <p className="price">${this.PlanOptions[2].price}/{this.PlanOptions[2].abbr}</p>
-                    <p className="monthsFree">{this.PlanOptions[1].free}</p>
+                    <img id="proIMG"></img>
+                    <p id="planType">{this.PlanOptions[2].type}</p>
+                    <p id="price">${this.PlanOptions[2].price}/{this.PlanOptions[2].abbr}</p>
+                    <p id="monthsFree">{this.PlanOptions[1].free}</p>
 
                 </div>
             </div>

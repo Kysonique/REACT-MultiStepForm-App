@@ -9,15 +9,63 @@
 }
 .pickPlan{
     width: 138px;
-    height: 160px;
+    height: fit-content;
     border: 1px #D6D9E6 solid;
     border-start-end-radius: 8px;
     border-end-end-radius: 8px;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
-
+    margin-right: 18px;
+    line-height: 1;
 
 }
+.pickPlan:active{
+    border-color: #483EFF;
+    background-color: #F8F9FF;
+
+}
+
+#arcadeIMG{
+    background-image: url('./compnent-assets/assests/arcade.svg');
+   
+}
+#advIMG{
+    background-image: url('./compnent-assets/assests/advanced.svg');
+  
+}
+#proIMG{
+    background-image: url('./compnent-assets/assests/pro.svg');
+    
+}
+#arcadeIMG, #proIMG, #advIMG{
+    width: 40px;
+    height: 40px;
+    border-radius: 75%;
+    margin-top: 20px;
+    margin-left: 16px;
+    margin-bottom: 39px;
+}
+
+#planType, #price, #monthsFree{
+    margin-left: 16px;
+}
+#planType{
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+#price{
+    font-size: 14px;
+    font-weight: 400;
+    color: #9699AA;
+}
+#monthsFree{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+
 .nextStepBtn{
     margin-top: 92px;
     background-color: #022959;
@@ -34,11 +82,11 @@
 
 .prevStepBtn{
     margin-top: 92px;
-    background-color: #022959;
-    color: white;
+    background-color: transparent;
+    color: #9699AA;
     width: 123px;
     height: 48px;
-    border: #022959;
+    border: transparent;
     border-start-end-radius: 8px;
     border-end-end-radius: 8px;
     border-bottom-left-radius: 8px;
