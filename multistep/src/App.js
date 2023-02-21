@@ -64,17 +64,17 @@ class App extends React.Component{
         <button className='testbtn' onClick={this.test}>test</button>
 
         <div className='card-div'>
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" className="carousel slide">
  
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <FormCard class="d-block w-100"/>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <FormCard className="d-block w-100"/>
     </div>
-    <div class="carousel-item">
-      <SelectPlan class="d-block w-100"/>
+    <div className="carousel-item">
+      <SelectPlan className="d-block w-100"/>
     </div>
-    <div class="carousel-item">
-      <AddOns class="d-block w-100"/>
+    <div className="carousel-item">
+      <AddOns className="d-block w-100"/>
     </div>
   </div>
  
