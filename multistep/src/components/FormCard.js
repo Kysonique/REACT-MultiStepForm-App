@@ -91,8 +91,7 @@ class FormCard extends React.Component {
                     onChange={this.handlePhoneChange}
                     ></input>
                     <br/>
-                    <button className="nestStepBtn" onClick={this.handleSave}>Next Step</button>
-
+                    <button onClick={this.handleSave} className="nextStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">Next Step</button>   
                 </form>
             </>
         )

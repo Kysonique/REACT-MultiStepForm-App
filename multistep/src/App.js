@@ -9,16 +9,16 @@ import AddOns from './components/AddOns';
 
 
 class App extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       newplan:
         {
-        urserinfo: {},
-        priceArr: [[1, 10], [2, 20]]
+        urserinfo: {}
         },
-      ToggleBtn: true
+        ToggleBtn: true
     }
+
     this.addPlan = this.addPlan.bind(this)
     this.handleToggleBtn = this.handleToggleBtn.bind(this)
   }
@@ -43,10 +43,8 @@ class App extends React.Component{
   handleToggleBtn(){
     if (this.toggleBtn === true){
       this.setState(this.toggleBtn === false)
-      this.state.priceArr.forEach(price => console.log(price[0]))
     } else{
       this.setState(this.toggleBtn === true)
-      this.state.priceArr.forEach(price => console.log(price[1]))
     }
   }
 
@@ -79,14 +77,7 @@ class App extends React.Component{
       <AddOns class="d-block w-100"/>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+ 
 </div>
 
 
@@ -100,3 +91,11 @@ export default App;
 
 
 {/* <button onClick={this.handleToggleBtn}></button> */}
+{/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button> */}
