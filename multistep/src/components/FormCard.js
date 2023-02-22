@@ -36,18 +36,18 @@ class FormCard extends React.Component {
     //     id: this.props.key
     // })
 
-    handleSave(e){
-        e.preventDefault()
-        const payload = {
-             username: this.state.username,
-             email: this.state.email,
-             phone: this.state.phone,
-             id: this.state.id
-        }
-        this.props.handleSaveClick(payload);
-        //this.resetState();
+    // handleSave(e){
+    //     e.preventDefault()
+    //     const payload = {
+    //          username: this.state.username,
+    //          email: this.state.email,
+    //          phone: this.state.phone,
+    //          id: this.state.id
+    //     }
+    //     this.props.handleSaveClick(payload);
+    //     //this.resetState();
         
-    }
+    // }
 
     render(){
         return (

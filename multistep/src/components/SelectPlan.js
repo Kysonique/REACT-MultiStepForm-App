@@ -5,13 +5,9 @@ class SelectPlan extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            newplan: {
                 type:"",
-                price:"",
-            }
-
+                price:[]
         }
-        this.monthlyYearly = this.monthlyYearly.bind(this)
     }
 
     PlanOptions = [
@@ -22,14 +18,11 @@ class SelectPlan extends React.Component{
     ]
 
     //chosePlan = PlanOptions.
-
-    monthlyYearly(){
-         if (this.props.ToggleBtn === true){
-            this.setState(this.PlanOptions.price[0])
-         }else{
-            this.setState(this.PlanOptions.price[1])
-         }
+    savePlan(e){
+        console.log(e.target.value)
     }
+
+
 
 
     
@@ -40,11 +33,11 @@ class SelectPlan extends React.Component{
             <p className="subtitle">You have the option of monthly or yearly billing.</p>
 
             <div className="cardContainer">
-                <div className="pickPlan" id="arcade" typeof="button" onClick={()=> console.log(this.props.ToggleBtn)}>
+                <div className="pickPlan" id="arcade" typeof="button" value={100} onClick={this.props.getValue}>
                     <img id="arcadeIMG"></img>
-                    <p id="planType">{this.PlanOptions[0].type}</p>
-                    <p id="price">${this.PlanOptions[0].price}/{this.PlanOptions[0].abbr}</p>
-                    <p id="monthsFree">{this.PlanOptions[0].free}</p>
+                    <p id="planType"></p>
+                    <p id="price">$</p>
+                    <p id="monthsFree"></p>
                 </div>
 
                 <div className="pickPlan" id="advanced">

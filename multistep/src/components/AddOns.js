@@ -33,6 +33,7 @@ class AddOns extends React.Component{
 
     addingPrices(e){
         this.state.prices.push(e.target.value)
+        console.log(e.value)
     }
     
 
@@ -44,7 +45,7 @@ class AddOns extends React.Component{
                 <p className="title">Pick add-ons</p>
                 <p className="subtitle">Add-ons help enhance your gaming experience.</p>
                 <div className="add-div">
-                    <button className="add-btn" onClick={this.addingPrices} value={this.state.pricesArr[0]}></button>
+                    <button className="add-btn" onClick={this.addingPrices} value={1}></button>
                     <div className="titles">
                         <p className="add-p1">Online service</p>
                         <p className="add-p2">Access multiplayer games</p>
