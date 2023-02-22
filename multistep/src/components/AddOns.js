@@ -8,13 +8,10 @@ class AddOns extends React.Component{
         super(props);
         this.state={
             prices: [],
-            pricesArr: [],
-
-            ToggleBtn: true
+            extraArr: [],
         };
 
         this.addingPrices = this.addingPrices.bind(this)
-        this.togglePrices = this.togglePrices.bind(this)
     }
 
     addChoices = [
@@ -23,17 +20,9 @@ class AddOns extends React.Component{
     ]
 
 
-    togglePrices(){
-        if (this.state.ToggleBtn === true){
-           return  this.setState({pricesArr: [1, 2]})
-        }else{
-            return this.setState({pricesArr: [10, 20]})
-        }
-    }
 
     addingPrices(e){
-        this.state.prices.push(e.target.value)
-        console.log(e.value)
+        console.log(e.target.id)
     }
     
 
@@ -45,7 +34,7 @@ class AddOns extends React.Component{
                 <p className="title">Pick add-ons</p>
                 <p className="subtitle">Add-ons help enhance your gaming experience.</p>
                 <div className="add-div">
-                    <button className="add-btn" onClick={this.addingPrices} value={1}></button>
+                    <button className="add-btn" id={this.addChoices[0].type} value={this.addChoices[0].prices} onClick={this.addingPrices}></button>
                     <div className="titles">
                         <p className="add-p1">Online service</p>
                         <p className="add-p2">Access multiplayer games</p>
@@ -54,7 +43,7 @@ class AddOns extends React.Component{
                 </div>
                 
                 <div className="add-div">
-                    <button className="add-btn" onClick={this.addingPrices} value={this.state.pricesArr[1]}></button>
+                    <button className="add-btn" onClick={this.addingPrices} value={2}></button>
                     <div className="titles">
                         <p className="add-p1">Larger storage</p>
                         <p className="add-p2">Extra 1TB of cloud save</p>
@@ -63,7 +52,7 @@ class AddOns extends React.Component{
                 </div>
 
                 <div className="add-div">
-                    <button className="add-btn" onClick={this.addingPrices} value={this.state.pricesArr[1]}></button>
+                    <button className="add-btn" onClick={this.addingPrices} value={3}></button>
                     <div className="titles">
                         <p className="add-p1">Customizable profile</p>
                         <p className="add-p2">Custom theme on your profile</p>

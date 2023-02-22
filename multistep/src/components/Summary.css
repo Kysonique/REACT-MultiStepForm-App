@@ -48,14 +48,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 181px;
+}
+#ty-img{
+    background-image: url('./compnent-assets/assests/thanks.svg');
+    width: 80px;
+    height: 80px;
 }
 
 #ty-title{
     font-size: 32px;
     font-weight: 700;
+    margin-top: 32px;
 }
 #ty-ptag{
     font-size: 16px;
     font-weight: 400;
     color: #9699AA;
+    text-align: center;
+}
+#ty-ptag{
+    width: 450px;
+    height: 75px;
 }

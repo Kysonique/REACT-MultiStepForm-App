@@ -8,24 +8,39 @@ import PlanSummary from './components/Summary';
 import ThanYou from './components/Thanks';
 //import AddOns from './components/AddOns';
 
+const PlanOptions = [
+    {type: 'Arcade', price: [9, 90], abbr:"mo, yr"},
+    {type: 'Advanced', price: [12, 120], abbr:"mo, yr"},
+    {type: 'Pro', price: [15, 150], abbr:"mo, yr"}
+]
+
+
+const twoFree = {free: '2 months free'}
+
+const extras = [
+    {type: 'Online service', price: [1, 10]},
+    {type: 'Larger storage', price: [2, 20]},
+    {type: 'Customizable profile', price: [2, 20]}
+]
 
 class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        type: "Example",
-        extra: [
-          {type: "example", price: 1},
-          {type: "example", price: 2},
-          {type: "example", price: 3}],
-        price: [1, 2, 2],
+        cardsMap: 1,
+        type: "",
+        extra: {},
+        price: 0,
         total: 0,
-        ToggleBtn: true
+        ToggleBtn: false
+
     }
     this.calculateTotal = this.calculateTotal.bind(this)
     this.addPlan = this.addPlan.bind(this)
     this.handleToggleBtn = this.handleToggleBtn.bind(this)
     this.getValue = this.getValue.bind(this)
+    this.slideChange = this.slideChange.bind(this)
+    this.addPricing = this.addPricing.bind(this)
 
   }
 //   resetState =() => this.setState({
@@ -46,53 +61,42 @@ class App extends React.Component{
         })
   }
 
+  slideChange(){
+    this.setState({cardsMap: + 1})
+}
 
-  PlanOptions = [
-    {type: 'Arcade', price: [9, 90], abbr:"mo, yr", free:'2 months free'},
-    {type: 'Advanced', price: [12, 120], abbr:"mo, yr", free:'2 months free'},
-    {type: 'Pro', price: [15, 150], abbr:"mo, yr", free:'2 months free'}
-  ]
+  handleToggleBtn(){
+    if (this.state.ToggleBtn === true){
+       this.setState({ToggleBtn: false });
+  
+    } else{
+       this.setState({ToggleBtn: true})
+    }
+  }
 
-  extras = [
-    {type: 'Online service', price: [1, 10]},
-    {type: 'Larger storage', price: [2, 20]},
-    {type: 'Customizable profile', price: [2, 20]}
-  ]
+    //toggle btn needs to handle: setting true/false, render prices and abbr for monthly/yearly, add free
+  getValue(){
+    PlanOptions.forEach((obj) => {
+        if(this.state.ToggleBtn === true){
+          console.log(obj.price[0])
+          return obj.price[0]
+        }else{
+            console.log(obj.price[1], twoFree)
+            
+        }
+    })
+}
 
+
+  addPricing(type, price){
+    this.setState({type: type.value, price: price.value})
+  }
 
   calculateTotal(){
     const planTotal = this.state.price.reduce((i) => i + this.state.total)
       console.log(planTotal)
       return this.setState({total: planTotal})
   }
-
-  getTotalPlan(){
-
-  }
-
-  getValue(){
-    let newArr;
-    this.PlanOptions.forEach((obj) => {
-        if(this.state.ToggleBtn === true){
-          newArr = obj.price[0];
-          console.log(newArr)
-        }else{
-            console.log(obj.price[1])
-            return this.state.price.push(obj.price[1])
-
-        }
-    })
-}
-
-  handleToggleBtn(){
-    if (this.state.ToggleBtn === true){
-      this.setState(this.state.ToggleBtn === false)
-    } else{
-      this.setState(this.state.ToggleBtn === true)
-    }
-  }
-
-
 
   test() {
     fetch('/verifyEmail', {
@@ -114,17 +118,24 @@ class App extends React.Component{
   <div className="carousel-inner">
     <div className="carousel-item active">
       <FormCard className="d-block w-100"
-        handleSaveClick={this.addPlan}/>
+        handleSaveClick={this.addPlan}
+        slideChange={this.slideChange}/>
     </div>
 
     <div className="carousel-item">
       <SelectPlan
+      priceValue={PlanOptions.map((i) => i.price)}
+      planName={PlanOptions.map((i) => i.type)}
       getValue={this.getValue} 
-      className="d-block w-100"/>
+      className="d-block w-100"
+      slideChange={this.slideChange}
+      handleToggleBtn={this.handleToggleBtn}
+      sendInfo={this.addPricing}/>
     </div>
 
     <div className="carousel-item">
-      <AddOns className="d-block w-100"/>
+      <AddOns className="d-block w-100"
+      slideChange={this.slideChange}/>
     </div>
 
     <div className="carousel-item">
@@ -139,11 +150,8 @@ class App extends React.Component{
     <div className="carousel-item">
       <ThanYou className="d-block w-100"/>
     </div>
-  </div>
- 
-</div>
-
-
+      </div>
+      </div>
         </div> 
       </div>
     )

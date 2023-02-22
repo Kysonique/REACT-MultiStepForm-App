@@ -20,10 +20,12 @@ body{
     font-size: 14px;
 
 }
+
 .numb-div:focus{
     background-color: #BEE2FD;
     color: #022959;
 }
+
 .nav-titles{
     margin-left: 10%;
     margin-top: 12%;
