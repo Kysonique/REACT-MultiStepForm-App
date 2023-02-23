@@ -55,7 +55,7 @@ const SelectPlan = (props) => {
 
                 </div>
             </div>
-            <button type="switch" className="toggle-btn" onClick={props.handleToggleBtn}></button>
+            <button type="switch" className="toggle-btn" onClick={props.handleToggleBtn}>{(props.duration ? 'Monthly':'yearly')}</button>
             <div className="btn-div">
                 <button className="prevStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">Go Back</button>
 

@@ -1,63 +1,65 @@
 import "./AddOns.css";
 import React from "react";
 
-//push to an array
 
-class AddOns extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            prices: [],
-            extraArr: [],
-        };
+const AddOns = (props) => {
+   
+    const {duration, planName, ...restProps} = props
 
-        this.addingPrices = this.addingPrices.bind(this)
-    }
-
-    addChoices = [
-        {type: "a", prices: [1, 10], abbr: ["/mo", "/yr"]},
-        {type: "b", prices: [2, 20],  abbr: ["/mo", "/yr"]}
+    const extras = [
+        {type: 'Online service', price: [1, 10]},
+        {type: 'Larger storage', price: [2, 20]},
+        {type: 'Customizable profile', price: [2, 20]}
     ]
 
+    // checkBoxes(){
+    //     return at
+    // }
 
-
-    addingPrices(e){
-        console.log(e.target.id)
+    function addingPrices(e){
+        console.log(e.target.value, e.target.title)
     }
     
 
 
 
-    render(){
+    
         return(
             <div>
                 <p className="title">Pick add-ons</p>
                 <p className="subtitle">Add-ons help enhance your gaming experience.</p>
+
                 <div className="add-div">
-                    <button className="add-btn" id={this.addChoices[0].type} value={this.addChoices[0].prices} onClick={this.addingPrices}></button>
+                    <div className="form-check">
+                        <input id="add-btn" className="form-check-input" type="checkbox" value={duration? extras[0].price[0] : extras[0].price[1]} onClick={addingPrices} title='Online service'/>
+                    </div>
                     <div className="titles">
                         <p className="add-p1">Online service</p>
                         <p className="add-p2">Access multiplayer games</p>
                     </div>
-                    <p className="addPrice">+$</p>
-                </div>
-                
-                <div className="add-div">
-                    <button className="add-btn" onClick={this.addingPrices} value={2}></button>
-                    <div className="titles">
-                        <p className="add-p1">Larger storage</p>
-                        <p className="add-p2">Extra 1TB of cloud save</p>
-                    </div>
-                    <p className="addPrice">+$/mo</p>
+                    <p className="addPrice">+${duration? extras[0].price[0] + '/mo' : extras[0].price[1] + '/yr'} </p>
                 </div>
 
                 <div className="add-div">
-                    <button className="add-btn" onClick={this.addingPrices} value={3}></button>
+                    <div className="form-check">
+                    <input id="add-btn" className="form-check-input" type="checkbox" value={duration? extras[1].price[0] : extras[1].price[1]}  onClick={addingPrices} title='Larger storage'/>
+                </div>                    
+                <div className="titles">
+                        <p className="add-p1">Larger storage</p>
+                        <p className="add-p2">Extra 1TB of cloud save</p>
+                    </div>
+                    <p className="addPrice">+${duration? extras[1].price[0] + '/mo' : extras[1].price[1] + '/yr'}</p>
+                </div>
+
+                <div className="add-div">
+                    <div className="form-check">
+                        <input id="add-btn" className="form-check-input" type="checkbox" value={duration? extras[2].price[0] : extras[2].price[1]}  onClick={addingPrices} title='Customizable profile'/>
+                    </div>
                     <div className="titles">
                         <p className="add-p1">Customizable profile</p>
                         <p className="add-p2">Custom theme on your profile</p>
                     </div>
-                    <p className="addPrice">+$/mo</p>
+                    <p className="addPrice">+${duration? extras[2].price[0] + '/mo' : extras[2].price[1] + '/yr'}</p>
                 </div>
 
                 <div className="btn-div">                    
@@ -67,7 +69,9 @@ class AddOns extends React.Component{
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default AddOns;
+
+//id="flexCheckDefault"

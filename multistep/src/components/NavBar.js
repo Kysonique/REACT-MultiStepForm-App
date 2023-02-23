@@ -4,9 +4,12 @@ import './NavBar.css'
 
 
 const NavBar = (props) => {
-   
 
-    
+    // const targetSlide = document.getSelection('')
+    // navLight(){
+
+    // }    
+
         return(
             <div className="nav-container">
            

@@ -27,7 +27,7 @@ class App extends React.Component{
         cardsMap: 1,
         type: "",
         extra: {},
-        price: 0,
+        price: [],
         total: 0,
         ToggleBtn: true
 
@@ -64,8 +64,13 @@ class App extends React.Component{
     }
 
     //toggle btn needs to handle: setting true/false, render prices and abbr for monthly/yearly, add free
-    getValue(){
-     
+    getValue(i){
+      if(this.state.ToggleBtn === true){
+        console.log(i.target.id, i.target.value)
+      }else{
+        console.log(i.target.id, i.target.value)
+
+      }
     }
 
     showPricing = ()=>{
@@ -88,7 +93,8 @@ class App extends React.Component{
   addPricing(e){
     e.stopPropagation();
     this.setState({type: e.target.id, price: e.target.value})
-    console.log(e.target.id, e.target.price)
+
+    console.log(e.target.id, e.target.value)
   }
 
   calculateTotal(){
@@ -117,8 +123,7 @@ class App extends React.Component{
   <div className="carousel-inner">
     <div className="carousel-item active">
       <FormCard className="d-block w-100"
-        handleSaveClick={this.addPlan}
-        slideChange={this.slideChange}/>
+        handleSaveClick={this.addPlan}/>
     </div>
 
     <div className="carousel-item">
@@ -133,7 +138,7 @@ class App extends React.Component{
 
     <div className="carousel-item">
       <AddOns className="d-block w-100"
-      slideChange={this.slideChange}/>
+      duration={this.state.ToggleBtn}/>
     </div>
 
     <div className="carousel-item">
