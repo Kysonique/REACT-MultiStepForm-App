@@ -3,8 +3,8 @@ import React from "react";
 
 
 const AddOns = (props) => {
-   
     const {duration, planName, ...restProps} = props
+   
 
     const extras = [
         {type: 'Online service', price: [1, 10]},
@@ -31,7 +31,7 @@ const AddOns = (props) => {
 
                 <div className="add-div">
                     <div className="form-check">
-                        <input id="add-btn" className="form-check-input" type="checkbox" value={duration? extras[0].price[0] : extras[0].price[1]} onClick={addingPrices} title='Online service'/>
+                        <input id="add-btn" className="form-check-input" type="checkbox" alt={duration? extras[0].price[0] : extras[0].price[1]} onClick={props.getValue} title='Online service'/>
                     </div>
                     <div className="titles">
                         <p className="add-p1">Online service</p>
@@ -42,7 +42,7 @@ const AddOns = (props) => {
 
                 <div className="add-div">
                     <div className="form-check">
-                    <input id="add-btn" className="form-check-input" type="checkbox" value={duration? extras[1].price[0] : extras[1].price[1]}  onClick={addingPrices} title='Larger storage'/>
+                    <input id="add-btn" className="form-check-input" type="checkbox" alt={duration? extras[1].price[0] : extras[1].price[1]}  onClick={props.getValue} title='Larger storage'/>
                 </div>                    
                 <div className="titles">
                         <p className="add-p1">Larger storage</p>
@@ -53,7 +53,7 @@ const AddOns = (props) => {
 
                 <div className="add-div">
                     <div className="form-check">
-                        <input id="add-btn" className="form-check-input" type="checkbox" value={duration? extras[2].price[0] : extras[2].price[1]}  onClick={addingPrices} title='Customizable profile'/>
+                        <input id="add-btn" className="form-check-input" type="checkbox" alt={duration? extras[2].price[0] : extras[2].price[1]}  onClick={props.getValue} title='Customizable profile'/>
                     </div>
                     <div className="titles">
                         <p className="add-p1">Customizable profile</p>

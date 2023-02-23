@@ -26,18 +26,20 @@ class App extends React.Component{
     this.state = {
         cardsMap: 1,
         type: "",
-        extra: {},
+        added: "",
         price: [],
+        xtrprice:[],
         total: 0,
         ToggleBtn: true
+
 
     }
     this.calculateTotal = this.calculateTotal.bind(this)
     this.addPlan = this.addPlan.bind(this)
     this.handleToggleBtn = this.handleToggleBtn.bind(this)
-    this.getValue = this.getValue.bind(this)
     this.addPricing = this.addPricing.bind(this)
     this.showPricing = this.showPricing.bind(this)
+    this.addOnsPricing = this.addOnsPricing.bind(this)
   }
 
     addPlan(newPlanObj){
@@ -64,14 +66,6 @@ class App extends React.Component{
     }
 
     //toggle btn needs to handle: setting true/false, render prices and abbr for monthly/yearly, add free
-    getValue(i){
-      if(this.state.ToggleBtn === true){
-        console.log(i.target.id, i.target.value)
-      }else{
-        console.log(i.target.id, i.target.value)
-
-      }
-    }
 
     showPricing = ()=>{
         if (this.state.ToggleBtn === true){
@@ -90,11 +84,14 @@ class App extends React.Component{
 
 
 
-  addPricing(e){
-    e.stopPropagation();
-    this.setState({type: e.target.id, price: e.target.value})
+  addPricing(i){
+    this.setState({type: i.target.id, price: i.target.title})
+    console.log(i.target.id, i.target.title)
+  }
 
-    console.log(e.target.id, e.target.value)
+  addOnsPricing(i){
+    this.setState({added: i.target.title, xtrprice: i.target.alt })
+    console.log(i.target.title, i.target.alt)
   }
 
   calculateTotal(){
@@ -140,6 +137,7 @@ class App extends React.Component{
 
     <div className="carousel-item">
       <AddOns className="d-block w-100"
+      getValue={this.addOnsPricing} 
       duration={this.state.ToggleBtn}/>
     </div>
 
@@ -148,8 +146,11 @@ class App extends React.Component{
       planTitle={this.state.type}
       planPrice={this.state.price}
       planTotal={this.state.total}
-      extras={this.state.extra}
+      extraServ={this.state.added}
+      extraPrice={this.state.xtrprice}
       calculate={this.calculate}
+      duration={this.state.ToggleBtn}
+
        className="d-block w-100"/>
     </div>
 

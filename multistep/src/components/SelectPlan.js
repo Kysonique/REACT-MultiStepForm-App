@@ -21,7 +21,7 @@ const SelectPlan = (props) => {
             <div className="cardContainer">
                 <div 
                 id={planName[0]}
-                value={(props.duration ? PlanOptions[0].price[0] : PlanOptions[0].price[1])}
+                title={(props.duration ? PlanOptions[0].price[0] : PlanOptions[0].price[1])}
                 className="pickPlan" 
                 type="button" 
                 onClick={props.getValue}>
@@ -34,7 +34,7 @@ const SelectPlan = (props) => {
 
                 <div 
                 id={planName[1]}
-                value={(props.duration ? PlanOptions[1].price[0] : PlanOptions[1].price[1])}
+                title={(props.duration ? PlanOptions[1].price[0] : PlanOptions[1].price[1])}
                 className="pickPlan"
                 type="button"
                 onClick={props.getValue}>
@@ -48,7 +48,7 @@ const SelectPlan = (props) => {
                 <div 
                 id={planName[2]}
                 onClick={props.getValue}
-                value={(props.duration ? PlanOptions[2].price[0] : PlanOptions[2].price[1])}
+                title={(props.duration ? PlanOptions[2].price[0] : PlanOptions[2].price[1])}
                 type="button"
                 className="pickPlan">
 

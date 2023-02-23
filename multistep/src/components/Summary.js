@@ -6,7 +6,7 @@ import "./Summary.css"
 //     const {handleTotal, }
 // }
 const PlanSummary = (props) => {
-    const {duration, planName, ...restProps} = props
+    const {planTitle, planPrice, extraServ, ...restProps} = props
 
    
     return(
@@ -19,17 +19,17 @@ const PlanSummary = (props) => {
                     <p>{props.planTitle}</p>
                     <p id="change">Change</p>
                 </div>
-                    <p className="price-tag">${props.planPrice}/</p>
+                    <p className="price-tag">${props.planPrice}</p>
             </div>
             <hr id="hr"/>
             <div id="planExtras" className="total-info">
-                <p>{props.extra}</p>
-                <p className="price-tag">$/</p>
+                <p>{props.extraServ}</p>
+                <p className="price-tag">${props.extraPrice}</p>
             </div>
 
             <div className="total-divs">
                 <p>Total</p>
-                <p id="tp-tag" className="price-tag">$/</p>
+                <p id="tp-tag" className="price-tag">${props.planPrice + props.extraPrice}{props.duration ? '/mo': '/yr'}</p>
             </div>
         </div>
         <div className="btn-div">
