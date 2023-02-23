@@ -27,8 +27,8 @@ class App extends React.Component{
         cardsMap: 1,
         type: "",
         added: "",
-        price: [],
-        xtrprice:[],
+        price: 0,
+        xtrprice: 0,
         total: 0,
         ToggleBtn: true
 
@@ -40,6 +40,7 @@ class App extends React.Component{
     this.addPricing = this.addPricing.bind(this)
     this.showPricing = this.showPricing.bind(this)
     this.addOnsPricing = this.addOnsPricing.bind(this)
+    this.resetState = this.resetState.bind(this)
   }
 
     addPlan(newPlanObj){
@@ -82,13 +83,21 @@ class App extends React.Component{
     } 
   
 
-
+    resetState = () =>{
+      this.setState({ 
+        type: "",
+        added: "",
+        price: 0,
+        xtrprice: 0,
+        total: 0,})
+    }
 
   addPricing(i){
     this.setState({type: i.target.id, price: i.target.title})
     console.log(i.target.id, i.target.title)
   }
 
+  
   addOnsPricing(i){
     this.setState({added: i.target.title, xtrprice: i.target.alt })
     console.log(i.target.title, i.target.alt)
@@ -112,7 +121,8 @@ class App extends React.Component{
     return (
       <div className='app-container'>
         <div className='nav-bar'>
-          <NavBar/>
+          <NavBar
+          resetPage={this.resetState}/>
         </div>
         <button className='testbtn' onClick={this.test}>test</button>
 

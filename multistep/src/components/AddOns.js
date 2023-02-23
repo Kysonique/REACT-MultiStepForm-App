@@ -16,9 +16,9 @@ const AddOns = (props) => {
     //     return at
     // }
 
-    function addingPrices(e){
-        console.log(e.target.value, e.target.title)
-    }
+    // function addingPrices(e){
+    //     console.log(e.target.value, e.target.title)
+    // }
     
 
 

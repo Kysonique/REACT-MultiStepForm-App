@@ -14,7 +14,7 @@ const NavBar = (props) => {
             <div className="nav-container">
            
             <div className="nav-step" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">
-                <input type="button" className="numb-div" value={1}/>
+                <input type="button" className="numb-div" value={1} onClick={props.resetPage}/>
                 <div className="nav-titles">
                     <p className="sTitle">STEP 1</p>
                     <p className="sSubTitle">YOUR INFO</p>
