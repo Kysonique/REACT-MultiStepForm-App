@@ -117,7 +117,7 @@ class App extends React.Component{
         <button className='testbtn' onClick={this.test}>test</button>
 
         <div className='card-div'>
-        <div id="carouselExampleIndicators" className="carousel slide">
+        <div id="carouselExampleIndicators" className="carousel slide" style={{position: 'absolute'}}>
  
   <div className="carousel-inner">
     <div className="carousel-item active">
