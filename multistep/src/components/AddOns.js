@@ -60,7 +60,7 @@ class AddOns extends React.Component{
                     <p className="addPrice">+$/mo</p>
                 </div>
 
-                <div className="carouselBtns">
+                <div className="btn-div">                    
                     <button className="prevStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">Go Back</button>
 
                     <button className="nextStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">Next Step</button>                

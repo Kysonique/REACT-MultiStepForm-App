@@ -1,19 +1,9 @@
 import React from "react";
 import './NavBar.css'
 
-const activeSlide = {backgroundColor: '#BEE2FD', color: '#022959'};
+
 
 const NavBar = (props) => {
-    // constructor(cards){
-    //     super(cards);
-    //     this.state = {
-    //         cardsMap: []
-    //     }
-    // }
-
-   
-    //onclick setState
-    //handleStepClick
    
 
     

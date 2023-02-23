@@ -29,10 +29,11 @@ const PlanSummary = (props) => {
                 <p id="tp-tag" className="price-tag">${props.total}/</p>
             </div>
         </div>
+        <div className="btn-div">
         <button className="prevStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">Go Back</button>
 
         <button className="confirmBtn" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">Confirm</button>
-
+        </div>
         </div>
     )
 }

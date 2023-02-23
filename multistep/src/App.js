@@ -9,18 +9,15 @@ import ThanYou from './components/Thanks';
 //import AddOns from './components/AddOns';
 
 const PlanOptions = [
-    {type: 'Arcade', price: [9, 90], abbr:"mo, yr"},
-    {type: 'Advanced', price: [12, 120], abbr:"mo, yr"},
-    {type: 'Pro', price: [15, 150], abbr:"mo, yr"}
+    {type: 'Arcade', price: [9, 90]},
+    {type: 'Advanced', price: [12, 120]},
+    {type: 'Pro', price: [15, 150]}
 ]
 
-
-const twoFree = {free: '2 months free'}
-
 const extras = [
-    {type: 'Online service', price: [1, 10]},
-    {type: 'Larger storage', price: [2, 20]},
-    {type: 'Customizable profile', price: [2, 20]}
+    {type: 'Online service', price: [1, 10], free: '2 months free'},
+    {type: 'Larger storage', price: [2, 20], free: '2 months free'},
+    {type: 'Customizable profile', price: [2, 20], free: '2 months free'}
 ]
 
 class App extends React.Component{
@@ -32,64 +29,66 @@ class App extends React.Component{
         extra: {},
         price: 0,
         total: 0,
-        ToggleBtn: false
+        ToggleBtn: true
 
     }
     this.calculateTotal = this.calculateTotal.bind(this)
     this.addPlan = this.addPlan.bind(this)
     this.handleToggleBtn = this.handleToggleBtn.bind(this)
     this.getValue = this.getValue.bind(this)
-    this.slideChange = this.slideChange.bind(this)
     this.addPricing = this.addPricing.bind(this)
-
-  }
-//   resetState =() => this.setState({
-//     username: "",
-//     email: "",
-//     phone: "",
-//     id: this.props.key
-// })
-
-  addPlan(newPlanObj){
-    const newPlanInfo = JSON.parse(JSON.stringify(this.state.newplan))
-    newPlanInfo.push(newPlanObj)
-    return this.setState({
-      newplan:[
-        {
-        urserinfo: {newPlanInfo}
-         }]
-        })
+    this.showPricing = this.showPricing.bind(this)
   }
 
-  slideChange(){
-    this.setState({cardsMap: + 1})
-}
-
-  handleToggleBtn(){
-    if (this.state.ToggleBtn === true){
-       this.setState({ToggleBtn: false });
-  
-    } else{
-       this.setState({ToggleBtn: true})
+    addPlan(newPlanObj){
+      const newPlanInfo = JSON.parse(JSON.stringify(this.state.newplan))
+      newPlanInfo.push(newPlanObj)
+      return this.setState({
+        newplan:[
+          {
+          urserinfo: {newPlanInfo}
+          }]
+          })
     }
-  }
+
+  
+    handleToggleBtn(){
+      if (this.state.ToggleBtn === true){
+        this.setState({ToggleBtn: false });
+        console.log('yearly')
+    
+      } else{
+        this.setState({ToggleBtn: true})
+        console.log('monthly')
+      }
+    }
 
     //toggle btn needs to handle: setting true/false, render prices and abbr for monthly/yearly, add free
-  getValue(){
-    PlanOptions.forEach((obj) => {
-        if(this.state.ToggleBtn === true){
+    getValue(){
+     
+    }
+
+    showPricing = ()=>{
+        if (this.state.ToggleBtn === true){
+          PlanOptions.map((obj) => {
           console.log(obj.price[0])
           return obj.price[0]
-        }else{
-            console.log(obj.price[1], twoFree)
-            
-        }
-    })
-}
+        })
+      }else{
+        PlanOptions.map((obj) =>{
+          console.log(obj.price[1])
+          return obj.price[1]
+        })
+      }
+    } 
+  
 
 
-  addPricing(type, price){
-    this.setState({type: type.value, price: price.value})
+
+  addPricing(e){
+    e.stopPropagation();
+    this.setState({type: e.target.id, price: e.target.value})
+    console.log(e.target.id, e.target.price)
   }
 
   calculateTotal(){
@@ -126,11 +125,10 @@ class App extends React.Component{
       <SelectPlan
       priceValue={PlanOptions.map((i) => i.price)}
       planName={PlanOptions.map((i) => i.type)}
-      getValue={this.getValue} 
+      getValue={this.addPricing} 
       className="d-block w-100"
-      slideChange={this.slideChange}
-      handleToggleBtn={this.handleToggleBtn}
-      sendInfo={this.addPricing}/>
+      duration={this.state.ToggleBtn}
+      handleToggleBtn={this.handleToggleBtn}/>
     </div>
 
     <div className="carousel-item">
