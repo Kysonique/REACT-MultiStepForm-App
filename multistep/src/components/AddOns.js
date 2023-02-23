@@ -65,7 +65,7 @@ const AddOns = (props) => {
                 <div className="btn-div">                    
                     <button className="prevStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">Go Back</button>
 
-                    <button className="nextStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">Next Step</button>                
+                    <button className="nextStepBtn"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" >Next Step</button>                
                 </div>
             </div>
         )

@@ -1,20 +1,17 @@
 import React from "react"
 import "./SelectPlan.css"
 
-const PlanOptions = [
-    {type: 'Arcade', price: [9, 90]},
-    {type: 'Advanced', price: [12, 120]},
-    {type: 'Pro', price: [15, 150]}
-]
+
 
 const SelectPlan = (props) => {
-    //chosePlan = PlanOptions.
-    // function savePlan(e){
-    //     this.setState({type: e.target.value, price: e.target.value})
-    //     console.log(e.target.value)
-    // }
+    
     const {priceValue, planName, ...restProps} = props
 
+    const PlanOptions = [
+        {type: 'Arcade', price: [9, 90]},
+        {type: 'Advanced', price: [12, 120]},
+        {type: 'Pro', price: [15, 150]}
+    ]
       
         return(
             <>
@@ -27,7 +24,7 @@ const SelectPlan = (props) => {
                 value={(props.duration ? PlanOptions[0].price[0] : PlanOptions[0].price[1])}
                 className="pickPlan" 
                 type="button" 
-                onClick={getValue}>
+                onClick={props.getValue}>
 
                     <img className="arcadeIMG"></img>
                     <p className="planType">{planName[0]}</p>
@@ -40,7 +37,7 @@ const SelectPlan = (props) => {
                 value={(props.duration ? PlanOptions[1].price[0] : PlanOptions[1].price[1])}
                 className="pickPlan"
                 type="button"
-                onClick={getValue}>
+                onClick={props.getValue}>
     
                     <img className="advIMG"></img>
                     <p className="planType">{props.planName[1]}</p>
@@ -50,7 +47,7 @@ const SelectPlan = (props) => {
 
                 <div 
                 id={planName[2]}
-                onClick={getValue}
+                onClick={props.getValue}
                 value={(props.duration ? PlanOptions[2].price[0] : PlanOptions[2].price[1])}
                 type="button"
                 className="pickPlan">

@@ -103,6 +103,8 @@ class App extends React.Component{
       return this.setState({total: planTotal})
   }
 
+
+
   test() {
     fetch('/verifyEmail', {
       method: 'post', 
@@ -147,6 +149,7 @@ class App extends React.Component{
       planPrice={this.state.price}
       planTotal={this.state.total}
       extras={this.state.extra}
+      calculate={this.calculate}
        className="d-block w-100"/>
     </div>
 

@@ -8,6 +8,7 @@ import "./Summary.css"
 const PlanSummary = (props) => {
     const {duration, planName, ...restProps} = props
 
+   
     return(
         <div>
             <p className="title">Finishing up</p>
@@ -18,7 +19,7 @@ const PlanSummary = (props) => {
                     <p>{props.planTitle}</p>
                     <p id="change">Change</p>
                 </div>
-                    <p className="price-tag">${props.price}/</p>
+                    <p className="price-tag">${props.planPrice}/</p>
             </div>
             <hr id="hr"/>
             <div id="planExtras" className="total-info">
@@ -28,7 +29,7 @@ const PlanSummary = (props) => {
 
             <div className="total-divs">
                 <p>Total</p>
-                <p id="tp-tag" className="price-tag">${props.total}/</p>
+                <p id="tp-tag" className="price-tag">$/</p>
             </div>
         </div>
         <div className="btn-div">
