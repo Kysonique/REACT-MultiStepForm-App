@@ -1,6 +1,12 @@
 import React from "react"
 import "./SelectPlan.css"
 
+const PlanOptions = [
+    {type: 'Arcade', price: [9, 90]},
+    {type: 'Advanced', price: [12, 120]},
+    {type: 'Pro', price: [15, 150]}
+]
+
 const SelectPlan = (props) => {
     //chosePlan = PlanOptions.
     // function savePlan(e){
@@ -9,7 +15,7 @@ const SelectPlan = (props) => {
     // }
     const {priceValue, planName, ...restProps} = props
 
-        
+      
         return(
             <>
             <p className="title">Select your plan</p>
@@ -18,23 +24,23 @@ const SelectPlan = (props) => {
             <div className="cardContainer">
                 <div 
                 id={planName[0]}
-                value={priceValue[0]}
+                value={(props.duration ? PlanOptions[0].price[0] : PlanOptions[0].price[1])}
                 className="pickPlan" 
                 type="button" 
-                onClick={props.getValue}>
+                onClick={getValue}>
 
                     <img className="arcadeIMG"></img>
                     <p className="planType">{planName[0]}</p>
-                    <p className="price">${(props.duration ? priceValue[0][0] + '/mo' : priceValue[0][1] + '/yr')}</p>
+                    <p className="price">${(props.duration ? PlanOptions[0].price[0] + '/mo' : PlanOptions[0].price[1] + '/yr')}</p>
                     <p className="monthsFree">{(props.duration ? null : '2 months free')}</p>
                 </div>
 
                 <div 
-                id={props.planName[1]}
-                value={priceValue[1]}
+                id={planName[1]}
+                value={(props.duration ? PlanOptions[1].price[0] : PlanOptions[1].price[1])}
                 className="pickPlan"
                 type="button"
-                onClick={props.getValue}>
+                onClick={getValue}>
     
                     <img className="advIMG"></img>
                     <p className="planType">{props.planName[1]}</p>
@@ -43,8 +49,9 @@ const SelectPlan = (props) => {
                 </div>
 
                 <div 
-                id={props.planName[2]}
-                onClick={props.getValue}
+                id={planName[2]}
+                onClick={getValue}
+                value={(props.duration ? PlanOptions[2].price[0] : PlanOptions[2].price[1])}
                 type="button"
                 className="pickPlan">
 

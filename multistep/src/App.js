@@ -144,8 +144,8 @@ class App extends React.Component{
     <div className="carousel-item">
       <PlanSummary
       planTitle={this.state.type}
-      price={this.state.price}
-      total={this.state.total}
+      planPrice={this.state.price}
+      planTotal={this.state.total}
       extras={this.state.extra}
        className="d-block w-100"/>
     </div>

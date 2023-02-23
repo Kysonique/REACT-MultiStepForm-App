@@ -6,6 +6,8 @@ import "./Summary.css"
 //     const {handleTotal, }
 // }
 const PlanSummary = (props) => {
+    const {duration, planName, ...restProps} = props
+
     return(
         <div>
             <p className="title">Finishing up</p>
